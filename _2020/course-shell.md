@@ -62,9 +62,9 @@ commands; fanciful graphical user interfaces, voice interfaces, and
 even AR/VR are everywhere. These are great for 80% of use-cases, but
 they are often fundamentally restricted in what they allow you to do —
 you cannot press a button that isn't there or give a voice command that
-hasn't been programmed. To take full advantage of the tools your
-computer provides, we have to go old-school and drop down to a textual
-interface: The Shell.
+hasn't been programmed. **To take full advantage of the tools your**
+**computer provides, we have to go old-school and drop down to a textual**
+**interface: The Shell.**
 
 Nearly all platforms you can get your hand on has a shell in one form or
 another, and many of them have several shells for you to choose from.
@@ -72,14 +72,14 @@ While they may vary in the details, at their core they are all roughly
 the same: they allow you to run programs, give them input, and inspect
 their output in a semi-structured way.
 
-In this lecture, we will focus on the Bourne Again SHell, or "bash" for
+In this lecture, we will focus on the <u>Bourne Again SHell, or "bash"</u> for
 short. This is one of the most widely used shells, and its syntax is
 similar to what you will see in many other shells. To open a shell
 _prompt_ (where you can type commands), you first need a _terminal_.
 Your device probably shipped with one installed, or you can install one
 fairly easily.
 
-## Using the shell
+## Using the shell:heavy_check_mark:
 
 When you launch your terminal, you will see a _prompt_ that often looks
 a little like this:
@@ -88,7 +88,7 @@ a little like this:
 missing:~$ 
 ```
 
-This is the main textual interface to the shell. It tells you that you
+**This is the main textual interface to the shell**. It tells you that you
 are on the machine `missing` and that your "current working directory",
 or where you currently are, is `~` (short for "home"). The `$` tells you
 that you are not the root user (more on that later). At this prompt you
@@ -112,7 +112,7 @@ hello
 
 In this case, we told the shell to execute the program `echo` with the
 argument `hello`. The `echo` program simply prints out its arguments.
-The shell parses the command by splitting it by whitespace, and then
+<font color= red>**The shell parses the command by splitting it by whitespace**</font>, and then
 runs the program indicated by the first word, supplying each subsequent
 word as an argument that the program can access. If you want to provide
 an argument that contains spaces or other special characters (e.g., a
@@ -121,7 +121,7 @@ or `"` (`"My Photos"`), or escape just the relevant characters with `\`
 (`My\ Photos`).
 
 But how does the shell know how to find the `date` or `echo` programs?
-Well, the shell is a programming environment, just like Python or Ruby,
+Well, the shell is a programming environment, <u>just like Python or Ruby,</u>
 and so it has variables, conditionals, loops, and functions (next
 lecture!). When you run commands in your shell, you are really writing a
 small bit of code that your shell interprets. If the shell is asked to
@@ -148,7 +148,7 @@ find out which file is executed for a given program name using the
 `which` program. We can also bypass `$PATH` entirely by giving the
 _path_ to the file we want to execute.
 
-## Navigating in the shell
+## Navigating in the shell:heavy_check_mark:
 
 A path on the shell is a delimited list of directories; separated by `/`
 on Linux and macOS and `\` on Windows. On Linux and macOS, the path `/`
@@ -249,7 +249,7 @@ page_. Press `q` to exit.
 missing:~$ man ls
 ```
 
-## Connecting programs
+## Connecting programs:heavy_check_mark:
 
 In the shell, programs have two primary "streams" associated with them:
 their input stream and their output stream. When the program tries to
@@ -258,7 +258,7 @@ something, it prints to its output stream. Normally, a program's input
 and output are both your terminal. That is, your keyboard as input and
 your screen as output. However, we can also rewire those streams!
 
-The simplest form of redirection is `< file` and `> file`. These let you
+<font color = Red>**The simplest form of redirection is `< file` and `> file`.**</font> These let you
 rewire the input and output streams of a program to a file respectively:
 
 ```console
@@ -293,7 +293,7 @@ missing:~$ curl --head --silent google.com | grep --ignore-case content-length |
 We will go into a lot more detail about how to take advantage of pipes
 in the lecture on data wrangling.
 
-## A versatile and powerful tool
+## A versatile and powerful tool:heavy_check_mark:
 
 On most Unix-like systems, one user is special: the "root" user. You may
 have seen it in the file listings above. The root user is above (almost)
@@ -372,7 +372,7 @@ We have not written solutions for the exercises. If you are stuck on anything
 in particular, feel free to send us an email describing what you've tried so
 far, and we will try to help you out.
 
- 1. For this course, you need to be using a Unix shell like Bash or ZSH. If you
+ - [x] For this course, you need to be using a Unix shell like Bash or ZSH. If you
     are on Linux or macOS, you don't have to do anything special. If you are on
     Windows, you need to make sure you are not running cmd.exe or PowerShell;
     you can use [Windows Subsystem for
@@ -381,10 +381,12 @@ far, and we will try to help you out.
     an appropriate shell, you can try the command `echo $SHELL`. If it says
     something like `/bin/bash` or `/usr/bin/zsh`, that means you're running the
     right program.
- 1. Create a new directory called `missing` under `/tmp`.
- 1. Look up the `touch` program. The `man` program is your friend.
- 1. Use `touch` to create a new file called `semester` in `missing`.
- 1. Write the following into that file, one line at a time:
+ - [x] Create a new directory called `missing` under `/tmp`.
+ - [x] Look up the `touch` program. The `man` program is your friend.
+
+    ![image-20230720015456243](assets/image-20230720015456243.png)
+ - [x] Use `touch` to create a new file called `semester` in `missing`.
+ - [x] Write the following into that file, one line at a time:
     ```
     #!/bin/sh
     curl --head --silent https://missing.csail.mit.edu
@@ -395,22 +397,24 @@ far, and we will try to help you out.
     differently: they will do the trick in this case. See the Bash
     [quoting](https://www.gnu.org/software/bash/manual/html_node/Quoting.html)
     manual page for more information.
- 1. Try to execute the file, i.e. type the path to the script (`./semester`)
+
+    > **here it seems like i sould try 'Connecting programs' but not 'vim'**
+ - [ ] Try to execute the file, i.e. type the path to the script (`./semester`)
     into your shell and press enter. Understand why it doesn't work by
     consulting the output of `ls` (hint: look at the permission bits of the
     file).
- 1. Run the command by explicitly starting the `sh` interpreter, and giving it
+ - [ ] Run the command by explicitly starting the `sh` interpreter, and giving it
     the file `semester` as the first argument, i.e. `sh semester`. Why does
     this work, while `./semester` didn't?
- 1. Look up the `chmod` program (e.g. use `man chmod`).
- 1. Use `chmod` to make it possible to run the command `./semester` rather than
+ - [ ] Look up the `chmod` program (e.g. use `man chmod`).
+ - [ ] Use `chmod` to make it possible to run the command `./semester` rather than
     having to type `sh semester`. How does your shell know that the file is
     supposed to be interpreted using `sh`? See this page on the
     [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line for more
     information.
- 1. Use `|` and `>` to write the "last modified" date output by
+ - [ ] Use `|` and `>` to write the "last modified" date output by
     `semester` into a file called `last-modified.txt` in your home
     directory.
- 1. Write a command that reads out your laptop battery's power level or your
+ - [ ] Write a command that reads out your laptop battery's power level or your
     desktop machine's CPU temperature from `/sys`. Note: if you're a macOS
     user, your OS doesn't have sysfs, so you can skip this exercise.
