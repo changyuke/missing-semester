@@ -34,9 +34,6 @@ website. Jekyll will re-build the website as you make changes to files.
 
 - lecture notes for [课程概述与shell](./_2020/course-shell.md)
 - lecture notes(IN CHINESE) for [课程概述与shell](https://missing-semester-cn.github.io/2020/course-shell/)
-- exercise process file and notes for lecture1 in [_exercises](./_exercises/lecture1_course-shell)
-
-
 
 ## License
 
