@@ -36,6 +36,8 @@ website. Jekyll will re-build the website as you make changes to files.
 - lecture notes(IN CHINESE) for [课程概述与shell](https://missing-semester-cn.github.io/2020/course-shell/)
 - exercise process file and notes for lecture1 in [_exercises](./_exercises/lecture1_course-shell)
 
+
+
 ## License
 
 All the contents in this course, including the website source code, lecture notes, exercises, and lecture videos are licensed under Attribution-NonCommercial-ShareAlike 4.0 International [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). See [here](https://missing.csail.mit.edu/license) for more information on contributions or translations.
