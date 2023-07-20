@@ -278,8 +278,12 @@ the files in sequence to its output stream. But when `cat` is not given any
 arguments, it prints contents from its input stream to its output stream (like
 in the third example above).
 
-You can also use `>>` to append to a file. Where this kind of
-input/output redirection really shines is in the use of _pipes_. The `|`
+You can also use `>>` to append to a file. 
+
+> `>`会覆盖，而 `>>` 不会
+
+Where this kind of
+input/output redirection really shines is in the use of _**pipes**_. The `|`
 operator lets you "chain" programs such that the output of one is the
 input of another:
 
@@ -392,29 +396,169 @@ far, and we will try to help you out.
     curl --head --silent https://missing.csail.mit.edu
     ```
     The first line might be tricky to get working. It's helpful to know that
-    `#` starts a comment in Bash, and `!` has a special meaning even within
-    double-quoted (`"`) strings. Bash treats single-quoted strings (`'`)
+    `#` starts a comment in Bash, **and `!` has a special meaning even within**
+    **double-quoted (`"`) strings**. Bash treats single-quoted strings (`'`)
     differently: they will do the trick in this case. See the Bash
     [quoting](https://www.gnu.org/software/bash/manual/html_node/Quoting.html)
     manual page for more information.
 
     > **here it seems like i sould try 'Connecting programs' but not 'vim'**
- - [ ] Try to execute the file, i.e. type the path to the script (`./semester`)
+    >
+    > ok
+    >
+    > ```bash
+    > echo '#!/bin/sh' > semester
+    > 
+    > echo 'curl --head --silent https://missing.csail.mit.edu' >> semester
+    > ```
+    >
+    > 
+ - [x] Try to execute the file, i.e. type the path to the script (`./semester`)
     into your shell and press enter. Understand why it doesn't work by
     consulting the output of `ls` (hint: look at the permission bits of the
-    file).
+    file).(:question:)
+    
+    ![image-20230720222050195](assets/image-20230720222050195.png)
  - [ ] Run the command by explicitly starting the `sh` interpreter, and giving it
     the file `semester` as the first argument, i.e. `sh semester`. Why does
     this work, while `./semester` didn't?
- - [ ] Look up the `chmod` program (e.g. use `man chmod`).
- - [ ] Use `chmod` to make it possible to run the command `./semester` rather than
+    
+    > 直接运行打不开`./semester`说没有权限，但是`sh semester`就可以
+    >
+    > ![image-20230720223706824](assets/image-20230720223706824.png)
+    >
+    > 
+    >
+    > **chatgptA:**
+    >
+    > ***
+    >
+    > "sh semester" 能够运行，而"./semester"不能运行的原因与操作系统如何处理脚本文件中的shebang（`#!`）行有关。
+    >
+    > 在你的 "semester" 脚本中，你在顶部有一个shebang行 `#!/bin/sh`，它指示脚本应该使用 `/bin/sh` shell 来解释执行。当你运行 "sh semester" 时，你明确告诉操作系统使用 "sh" 解释器来执行该脚本。这样运行是有效的，因为在使用特定解释器显式执行脚本时，shebang行会被忽略。
+    >
+    > 另一方面，当你尝试运行 "./semester" 时，shebang行并不会被忽略。相反，操作系统会查看shebang行，以确定应该使用哪个解释器来执行脚本。在这种情况下，shebang行 `#!/bin/sh` 指定了脚本应该使用 `/bin/sh` shell 来执行。然而，可能存在shebang行或"sh"解释器路径的问题，这可能导致脚本无法按预期运行。
+    >
+    > 如果"./semester"不能运行，你可以检查以下几点：
+    >
+    > 1. 检查shebang行：确保 "semester" 脚本中的shebang行是正确的，并且指向了 "sh" 解释器的有效路径。它应该像这样：
+    >
+    >    ```bash
+    >    #!/bin/sh
+    >    ```
+    >
+    > 2. <font color = Red>**检查文件权限：**</font>确保 "semester" 脚本具有执行权限。你可以使用以下命令设置执行权限：
+    >
+    >    ```bash
+    >    chmod +x semester
+    >    ```
+    >
+    > 3. 验证 "sh" 解释器：检查你的系统上是否安装了 "sh" 解释器，并且该解释器在指定的路径 `/bin/sh` 可用。你可以通过运行以下命令验证：
+    >
+    >    ```bash
+    >    which sh
+    >    ```
+    >
+    >    这将返回 "sh" 解释器的路径。
+    >
+    > 4. 检查工作目录：当你运行 "./semester" 时，请确保你在与 "semester" 脚本位于同一目录中。如果脚本在不同的目录中，你需要提供正确的脚本路径。
+    >
+    > 通过明确运行 "sh semester"，你绕过了shebang行，并直接指定了解释器，因此在这种情况下它能够运行。但是，如果你希望将脚本作为可执行文件运行（即 "./semester"），你需要确保shebang行和文件权限设置正确，并且 "sh" 解释器在指定的路径上可用。
+    >
+    > ***
+    >
+    > because didn't have excute permissions!!
+    
+    
+ - [x] Look up the `chmod` program (e.g. use `man chmod`).
+
+    ![image-20230720222541623](assets/image-20230720222541623.png)
+
+    :sweat:说实话没完全看懂
+ - [x] Use `chmod` to make it possible to run the command `./semester` rather than
     having to type `sh semester`. How does your shell know that the file is
     supposed to be interpreted using `sh`? See this page on the
     [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line for more
     information.
- - [ ] Use `|` and `>` to write the "last modified" date output by
+    
+    ![image-20230720225635313](assets/image-20230720225635313.png)
+ - [x] Use `|` and `>` to write the "last modified" date output by
     `semester` into a file called `last-modified.txt` in your home
     directory.
+    
+    ```bash
+    ./semester | grep last-modified > ../../last-modified.txt
+    ```
+    
+    > **chatgptA：**
+    >
+    > `grep` 是 Linux 和 Unix 系统中一个强大的文本搜索工具，用于在文件中查找特定的模式（字符串）。`grep` 命令的基本语法如下：
+    >
+    > ```
+    > grep [options] pattern [file ...]
+    > ```
+    >
+    > 其中：
+    >
+    > - `options`：可选参数，用于控制 `grep` 命令的行为。例如，`-i` 表示忽略大小写，`-n` 表示显示匹配行的行号等。您可以使用 `grep --help` 命令查看所有可用选项的详细信息。
+    >
+    > - `pattern`：要搜索的模式或字符串。
+    >
+    > - `file ...`：可选参数，指定要在哪些文件中搜索模式。如果不指定文件名，则 `grep` 命令将从标准输入读取数据（通常是通过管道传递数据给 `grep`）。
+    >
+    > 下面是一些常用的 `grep` 命令示例：
+    >
+    > 1. 在文件中搜索指定字符串：
+    >
+    > ```bash
+    > grep "search_string" file.txt
+    > ```
+    >
+    > 2. 忽略大小写搜索：
+    >
+    > ```bash
+    > grep -i "search_string" file.txt
+    > ```
+    >
+    > 3. 显示匹配行的行号：
+    >
+    > ```bash
+    > grep -n "search_string" file.txt
+    > ```
+    >
+    > 4. 递归搜索目录中的文件：
+    >
+    > ```bash
+    > grep "search_string" -r directory/
+    > ```
+    >
+    > 5. 使用正则表达式进行搜索：
+    >
+    > ```bash
+    > grep -E "pattern" file.txt
+    > ```
+    >
+    > 6. 只显示匹配的字符串本身（不显示整行）：
+    >
+    > ```bash
+    > grep -o "pattern" file.txt
+    > ```
+    >
+    > 7. 反向搜索（显示不匹配的行）：
+    >
+    > ```bash
+    > grep -v "pattern" file.txt
+    > ```
+    >
+    > 8. 统计匹配到的行数：
+    >
+    > ```bash
+    > grep -c "search_string" file.txt
+    > ```
+    >
+    > 请注意，`grep` 命令区分大小写。如果您需要进行大小写不敏感的搜索，可以使用 `-i` 选项。另外，<font color = red>**`grep` 默认会输出包含匹配字符串的整行内容**</font>。如果您只希望输出匹配的字符串本身，可以使用 `-o` 选项。
  - [ ] Write a command that reads out your laptop battery's power level or your
     desktop machine's CPU temperature from `/sys`. Note: if you're a macOS
     user, your OS doesn't have sysfs, so you can skip this exercise.
+    
+    > 没有这个目录

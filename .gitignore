@@ -2,4 +2,5 @@
 _site/
 __pycache__/
 .jekyll-metadata
-/_exercises/lecture1_course-shell/readme.md
+
+/_exercises/lecture1_course-shell/linux_namer_psw.md
