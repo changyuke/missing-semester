@@ -49,6 +49,7 @@ mcd () {
 
 Here `$1` is the first argument to the script/function.
 Unlike other scripting languages, bash uses a variety of special variables to refer to arguments, error codes, and other relevant variables. Below is a list of some of them. A more comprehensive list can be found [here](https://tldp.org/LDP/abs/html/special-chars.html).
+
 - `$0` - Name of the script
 - `$1` to `$9` - Arguments to the script. `$1` is the first argument and so on.
 - `$@` - All the arguments
@@ -117,6 +118,13 @@ Bash implements many comparisons of this sort - you can find a detailed list in 
 When performing comparisons in bash, try to use double brackets `[[ ]]` in favor of simple brackets `[ ]`. Chances of making mistakes are lower although it won't be portable to `sh`. A more detailed explanation can be found [here](http://mywiki.wooledge.org/BashFAQ/031).
 
 When launching scripts, you will often want to provide arguments that are similar. Bash has ways of making this easier, expanding expressions by carrying out filename expansion. These techniques are often referred to as shell _globbing_.
+
+
+
+***
+
+:red_circle:
+
 - Wildcards - Whenever you want to perform some sort of wildcard matching, you can use `?` and `*` to match one or any amount of characters respectively. For instance, given files `foo`, `foo1`, `foo2`, `foo10` and `bar`, the command `rm foo?` will delete `foo1` and `foo2` whereas `rm foo*` will delete all but `bar`.
 - Curly braces `{}` - Whenever you have a common substring in a series of commands, you can use curly braces for bash to expand this automatically. This comes in very handy when moving or converting files.
 
@@ -333,20 +341,20 @@ polo() {
 {% endcomment %}
 
 1. Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run.
-Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end.
-Bonus points if you can also report how many runs it took for the script to fail.
+  Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end.
+  Bonus points if you can also report how many runs it took for the script to fail.
 
     ```bash
     #!/usr/bin/env bash
-
+  
     n=$(( RANDOM % 100 ))
-
+  
     if [[ n -eq 42 ]]; then
        echo "Something went wrong"
        >&2 echo "The error was using magic numbers"
        exit 1
     fi
-
+  
     echo "Everything went according to plan"
     ```
 
