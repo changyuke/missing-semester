@@ -83,7 +83,7 @@ How should a version control system relate snapshots? One simple model would be
 to have a linear history. A history would be a list of snapshots in time-order.
 For many reasons, Git doesn't use a simple model like this.
 
-In Git, a history is a directed acyclic graph (DAG) of snapshots. That may
+In Git, a history is a **directed acyclic graph (DAG)**--有向无环图  of snapshots. That may
 sound like a fancy math word, but don't be intimidated. All this means is that
 each snapshot in Git refers to a set of "parents", the snapshots that preceded
 it. It's a set of parents rather than a single parent (as would be the case in
@@ -117,13 +117,14 @@ o <-- o <-- o <-- o <---- <strong>o</strong>
               --- o <-- o
 </code>
 </pre>
-
 Commits in Git are immutable. This doesn't mean that mistakes can't be
 corrected, however; it's just that "edits" to the commit history are actually
 creating entirely new commits, and references (see below) are updated to point
 to the new ones.
 
-## Data model, as pseudocode
+可能会遇到合并冲突，这时候需要程序员去解决冲突
+
+## Data model, as pseudocode（伪代码）
 
 It may be instructive to see Git's data model written down in pseudocode:
 
@@ -134,7 +135,7 @@ type blob = array<byte>
 // a directory contains named files and directories
 type tree = map<string, tree | blob>
 
-// a commit has parents, metadata, and the top-level tree
+// a commit has parents, metadata, and the top-level tree, snapshot in course
 type commit = struct {
     parents: array<commit>
     author: string
@@ -154,7 +155,7 @@ type object = blob | tree | commit
 ```
 
 In Git data store, all objects are content-addressed by their [SHA-1
-hash](https://en.wikipedia.org/wiki/SHA-1).
+hash](https://en.wikipedia.org/wiki/SHA-1). 哈希函数，把一大堆数据转换成一组数据
 
 ```
 objects = map<string, object>
@@ -535,7 +536,7 @@ game that teaches you Git.
    tutorial like [Learn Git Branching](https://learngitbranching.js.org/). As
    you're working through it, relate Git commands to the data model.
 1. Clone the [repository for the
-class website](https://github.com/missing-semester/missing-semester).
+  class website](https://github.com/missing-semester/missing-semester).
     1. Explore the version history by visualizing it as a graph.
     1. Who was the last person to modify `README.md`? (Hint: use `git log` with
        an argument).

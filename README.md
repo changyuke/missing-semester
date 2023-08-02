@@ -28,12 +28,35 @@ docker-compose up --build
 Then, navigate to <http://localhost:4000> on your host machine to view the
 website. Jekyll will re-build the website as you make changes to files.
 
-## 实践路线
+## TDL
+
+| lecture                        | status                                                       | date      |
+| ------------------------------ | ------------------------------------------------------------ | --------- |
+| lec1 course-shell              | ![Static Badge](https://img.shields.io/badge/Done-lightgreen) | 2023-7-20 |
+| lec2 shell tools and Scripting | ![Static Badge](https://img.shields.io/badge/Cancel-ffb6c1)![Static Badge](https://img.shields.io/badge/Pending-fffdd0) | 2023-7-25 |
+| lec3                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec4                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec5                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec6                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec7                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec8 Version Contorl (Git)     | ![Static Badge](https://img.shields.io/badge/In_Progress-lightblue) |           |
+| lec9                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec11                          | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
 
 ### 1.course-shell
 
 - lecture notes & exercise notes for [课程概述与shell](./_2020/course-shell.md)
 - lecture notes**(IN CHINESE)** for [课程概述与shell](https://missing-semester-cn.github.io/2020/course-shell/)
+
+### 2.shell tools and Scripting
+
+> 有点陌生，pending
+
+### 8.Version Control (Git)
+
+- lecture notes & exercise notes for [课程概述与shell](./_2020/course-shell.md)
+
+
 
 ## License
 
