@@ -30,23 +30,23 @@ website. Jekyll will re-build the website as you make changes to files.
 
 ## TDL
 
-| lecture                        | status                                                       | date      |
-| ------------------------------ | ------------------------------------------------------------ | --------- |
-| lec1 course-shell              | ![Static Badge](https://img.shields.io/badge/Done-lightgreen) | 2023-7-20 |
-| lec2 shell tools and Scripting | ![Static Badge](https://img.shields.io/badge/Cancel-ffb6c1)![Static Badge](https://img.shields.io/badge/Pending-fffdd0) | 2023-7-25 |
-| lec3                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
-| lec4                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
-| lec5                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
-| lec6                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
-| lec7                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
-| lec8 Version Contorl (Git)     | ![Static Badge](https://img.shields.io/badge/In_Progress-lightblue) |           |
-| lec9                           | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
-| lec11                          | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lecture                                                      | status                                                       | date      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | --------- |
+| lec1 course-shell                                            | ![Static Badge](https://img.shields.io/badge/Done-lightgreen) | 2023-7-20 |
+| lec2 shell tools and Scripting                               | ![Static Badge](https://img.shields.io/badge/Cancel-ffb6c1) ![Static Badge](https://img.shields.io/badge/Pending-fffdd0) | 2023-7-25 |
+| lec3                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec4                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec5                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec6 [Version Contorl (Git)](https://www.bilibili.com/video/BV1Wh4y1s7Lj) | ![Static Badge](https://img.shields.io/badge/In_Progress-lightblue) | 2023-8-3  |
+| lec7                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec8                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec9                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec11                                                        | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
 
 ### 1.course-shell
 
 - lecture notes & exercise notes for [课程概述与shell](./_2020/course-shell.md)
-- lecture notes**(IN CHINESE)** for [课程概述与shell](https://missing-semester-cn.github.io/2020/course-shell/)
+- lecture wedsite**(IN CHINESE)** for [课程概述与shell](https://missing-semester-cn.github.io/2020/course-shell/)
 
 ### 2.shell tools and Scripting
 

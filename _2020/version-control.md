@@ -90,6 +90,8 @@ it. It's a set of parents rather than a single parent (as would be the case in
 a linear history) because a snapshot might descend from multiple parents, for
 example, due to combining (merging) two parallel branches of development.
 
+> git用有向无环图来模拟历史
+
 Git calls these snapshots "commit"s. Visualizing a commit history might look
 something like this:
 
@@ -122,11 +124,14 @@ corrected, however; it's just that "edits" to the commit history are actually
 creating entirely new commits, and references (see below) are updated to point
 to the new ones.
 
-可能会遇到合并冲突，这时候需要程序员去解决冲突
+> 可能会遇到合并冲突，这时候需要程序员去解决冲突
+>
 
 ## Data model, as pseudocode（伪代码）
 
 It may be instructive to see Git's data model written down in pseudocode:
+
+> git中用到的数据结构的伪代码，文件，树，commit
 
 ```
 // a file is a bunch of bytes
