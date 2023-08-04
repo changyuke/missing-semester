@@ -543,11 +543,35 @@ game that teaches you Git.
 1. Clone the [repository for the
   class website](https://github.com/missing-semester/missing-semester).
     1. Explore the version history by visualizing it as a graph.
+  
+       > ![image-20230804102534783](version-control.assets/image-20230804102534783.png)
     1. Who was the last person to modify `README.md`? (Hint: use `git log` with
        an argument).
+       
+       > ```bash
+       > git blame README.md
+       > ```
+       >
+       > ![image-20230804102829993](version-control.assets/image-20230804102829993.png)
+       >
+       > ```bash
+       > git log -1 README.md
+       > ```
+       >
+       > ![image-20230804103112126](version-control.assets/image-20230804103112126.png)
     1. What was the commit message associated with the last modification to the
        `collections:` line of `_config.yml`? (Hint: use `git blame` and `git
        show`).
+       
+       > ![image-20230804104051232](version-control.assets/image-20230804104051232.png)
+       >
+       > ```bash
+       > git log --pretty=format:"%s" a88b4eac -1
+       > ```
+       >
+       > ```bash
+       > git show --pretty=format:"%s" a88b4eac | head
+       > ```
 1. One common mistake when learning Git is to commit large files that should
    not be managed by Git or adding sensitive information. Try adding a file to
    a repository, making some commits and then deleting that file from history
