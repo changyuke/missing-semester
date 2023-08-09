@@ -34,27 +34,35 @@ website. Jekyll will re-build the website as you make changes to files.
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- |
 | lec1 course-shell                                            | ![Static Badge](https://img.shields.io/badge/Done-lightgreen) | 2023-7-20 |
 | lec2 shell tools and Scripting                               | ![Static Badge](https://img.shields.io/badge/Cancel-ffb6c1) ![Static Badge](https://img.shields.io/badge/Pending-fffdd0) | 2023-7-25 |
-| lec3                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
+| lec3 [Editors](https://www.bilibili.com/video/BV1Wh4y1s7Lj/) | ![Static Badge](https://img.shields.io/badge/Done-lightgreen) | 2023-8-8  |
 | lec4                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
 | lec5                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
-| lec6 [Version Contorl (Git)](https://www.bilibili.com/video/BV1Wh4y1s7Lj) | ![Static Badge](https://img.shields.io/badge/In_Progress-lightblue) | 2023-8-3  |
+| lec6 [Version Contorl (Git)](https://www.bilibili.com/video/BV1Wh4y1s7Lj) | ![Static Badge](https://img.shields.io/badge/Done-lightgreen) | 2023-8-3  |
 | lec7                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
 | lec8                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
 | lec9                                                         | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
 | lec11                                                        | ![Static Badge](https://img.shields.io/badge/Not_Started-d3d3d3) |           |
 
+
+
+> lecture wedsite**(IN CHINESE)** for [课程概述与shell](https://missing-semester-cn.github.io/2020/course-shell/)
+
 ### 1.course-shell
 
 - lecture notes & exercise notes for [课程概述与shell](./_2020/course-shell.md)
-- lecture wedsite**(IN CHINESE)** for [课程概述与shell](https://missing-semester-cn.github.io/2020/course-shell/)
 
 ### 2.shell tools and Scripting
 
 > 有点陌生，pending
 
+### 3.editors
+
+- lecture notes & exercise notes for [editors](./_2020/editors.md)
+
+
 ### 8.Version Control (Git)
 
-- lecture notes & exercise notes for [课程概述与shell](./_2020/course-shell.md)
+- lecture notes & exercise notes for [version control](./_2020/version-control.md)
 
 
 

@@ -232,7 +232,7 @@ def fizz_buzz(limit):
     for i in range(limit):
         if i % 3 == 0:
             print('fizz')
-        if i % 5 == 0:
+        if i % 5  == 0:
             print('fizz')
         if i % 3 and i % 5:
             print(i)
@@ -272,7 +272,7 @@ We will fix the following issues:
   - "import sys"
   - `/10`
   - `ci(` to "int(sys.argv[1])"
-{% endcomment %}
+  {% endcomment %}
 
 See the lecture video for the demonstration. Compare how the above changes are
 made using Vim to how you might make the same edits using another program.
@@ -432,6 +432,8 @@ better way of doing this", there probably is: look it up online.
 1. Complete `vimtutor`. Note: it looks best in a
    [80x24](https://en.wikipedia.org/wiki/VT100) (80 columns by 24 lines)
    terminal window.
+   
+   > 做到 lesson3.4
 1. Download our [basic vimrc](/2020/files/vimrc) and save it to `~/.vimrc`. Read
    through the well-commented file (using Vim!), and observe how Vim looks and
    behaves slightly differently with the new config.
